@@ -1,0 +1,12 @@
+.DS_Store
+system/
+themes/
+uploads/
+images/
+*.jpg
+*.jpeg
+*.mp3
+*.mp4
+*.ogg
+*.png
+*.gif
