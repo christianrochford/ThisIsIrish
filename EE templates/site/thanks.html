@@ -1,0 +1,51 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <link rel="stylesheet" href="css/ie7.css"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
+{embed="embeds/head"}
+<body style="background-image: url('{site_url}uploads/images/thanks.jpg');">
+<div id="container" class="{exp:low_random:items separator=" "}green yellow red blue{/exp:low_random:items}">
+	<header>
+		<h1><a href="{site_url}">This is Irish</a></h1>
+		<nav>
+			<ul>
+				{exp:channel:prev_entry channel="phrase"}
+				<li><a href="{path='archive/view'}" class="icon-arrow-up" aria-hidden="true"></a></li>
+				{/exp:channel:prev_entry}
+				{exp:channel:next_entry}
+				<li><a href="{path='archive/view'}" class="icon-arrow-down" aria-hidden="true"></a></li>
+				{/exp:channel:next_entry}
+			</ul>
+		</nav>
+	</header>
+	{exp:channel:entries channel="phrase" order_by="date" limit="1" disable="categories|category_fields|member_data|trackbacks|pagination"}
+	<div id="phrase-wrapper">
+		<p id="phrase">Go raibh míle maith agat</p>
+		<p id="phonetic">Guh rev meal-eh mah a-gut</p>
+		<nav id="nav">
+			<ul>
+				<li><a href="#" class="icon-cycle" aria-hidden="true"></a></li>
+			</ul>
+		</nav>
+		<p id="translation">Thank You!</p>
+	</div>
+
+	{embed="embeds/about"}
+	{embed="embeds/submit"}
+	<footer>
+		<ul>
+			<li><p id="date">{current_time format="%d.%m.%Y"}</p></li>
+			<li><a href="{site_url}index.php/archive">archive</a></li>
+			<li><a href="#" id="about-trigger">about</a></li>
+			<li><a href="#" class="submit-trigger">submit</a></li>
+		</ul>
+		{/exp:channel:entries}
+	<div id="angle"></div>
+	</footer>
+</div>
+{embed="embeds/scripts"}
+</body>
+</html>

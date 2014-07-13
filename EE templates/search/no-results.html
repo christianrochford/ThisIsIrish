@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <link rel="stylesheet" href="css/ie7.css"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
+{embed="embeds/head"}
+<body>
+<div id="container" class="archive {exp:low_random:items separator=" "}green yellow red blue{/exp:low_random:items}">
+	<header>
+		<h1><a href="{site_url}">This is Irish</a></h1>
+		<a href="#" class="icon-search" aria-hidden="true"></a>
+	</header>
+	<div id="archives">
+	<h3 class="phrase">Gabh mo Leithscéal</h3>
+	<p>Your search returned no results, check out the <a href="{site_url}archive">archives</a></p>
+	</div>
+
+	<div id="search-modal">
+		<a href="#" class="icon-close-modal" aria-hidden="true"></a>
+		<h2>Search</h2>
+		{exp:search:simple_form channel="phrase" result_page="/search/results"}
+			<input type="text" name="keywords" id="keywords" value="" size="18" maxlength="100" placeholder="Enter search terms here">
+			<input type="submit" value="submit" class="submit">
+		{/exp:search:simple_form}
+	</div>
+
+	{embed="embeds/about"}
+	{embed="embeds/submit"}
+
+	<footer>
+		<ul>
+			<li><p id="date">{current_time format="%d.%m.%Y"}</p></li>
+			<li><a href="{site_url}index.php/archive">archive</a></li>
+			<li><a href="#" id="about-trigger">about</a></li>
+			<li><a href="#" class="submit-trigger">submit</a></li>
+		</ul>
+	<div id="angle"></div>
+	</footer>
+</div>
+{embed="embeds/scripts"}
+</body>
+</html>

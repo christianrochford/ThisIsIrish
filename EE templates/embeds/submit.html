@@ -1,0 +1,19 @@
+<div id="submit-modal">
+	<a href="#" class="icon-close-modal" aria-hidden="true"></a>
+	<h2 id="contribute" data-typer-targets="Contribute an entry, Share your phrase">Contribute an entry</h2>
+	{exp:freeform:form form_name="phrase_submissions" form:class="custom" required="name|email|phrase|translation" return="site/thanks" notify_user="yes" user_email_field="email" inline_errors="yes" file_upload="uploads/audio"}
+		{if freeform:error:name || freeform:error:email || freeform:error:phrase || freeform:error:translation}
+	    <script>
+	    	var submitForm = document.getElementById('submit-modal');
+	    	submitForm.className = submitForm.className + " open";
+		document.getElementById('nav').style.display = 'none';
+	    </script>
+	    {/if}
+		<input type="text" name="name" {if freeform:error:name}placeholder="you forgot to enter your name"{if:else}placeholder="name"{/if}>
+		<input type="email" name="email" {if freeform:error:email}placeholder="you need to enter a valid email"{if:else}placeholder="email@domain.com"{/if}>
+		<input type="text" name="phrase" {if freeform:error:phrase}placeholder="you forgot to enter a phrase"{if:else}placeholder="phrase"{/if}>
+		<input type="text" name="translation" {if freeform:error:translation}placeholder="you forgot to enter a translation"{if:else}placeholder="english translation"{/if}>
+		<!--<label for="audio">Audio File (optional)</label>{freeform:field:audio show="1" attr:class="upload"}-->
+		<input type="submit" name="submit" value="Submit">
+	{/exp:freeform:form}
+</div>
